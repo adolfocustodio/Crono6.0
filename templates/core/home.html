@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block main %}
+{% for postagem in postagens %}
+<div class="mb-3 p-3 postagem">
+    <div class="mb-3">
+        <h1 class="fs-2 {% if postagem.categoria %}mb-2{% else %}mb-0{% endif %}">{{ postagem.titulo }}</h1>
+        {% if postagem.categoria %}
+        <a class="link" href="">{{ postagem.categoria }}</a>
+        {% endif %}
+    </div>
+    <div>
+        <p class="mb-0">{{ postagem.desc | linebreaksbr | truncatechars:500 }}</p>
+    </div>
+</div>
+{% endfor %}
+{% endblock main %}

@@ -1,0 +1,50 @@
+:root {
+    --azul: #0a58ca;
+    --azul2: #094fba;
+    --azul3: #083fba;
+    --branco: #fff;
+    --branco2: #f8f9fa;
+}
+
+header {
+    align-items: center;
+    background-color: var(--azul);
+    display: flex;
+    height: 66px;
+}
+
+header h1 {
+    color: var(--branco);
+    font-weight: bold;
+}
+
+main {
+    align-items: center;
+    background-color: var(--branco2);
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 66px);
+}
+
+.postagem {
+    background-color: var(--branco);
+    width: 750px;
+}
+
+a {
+    text-decoration: 0;
+}
+
+.link {
+    color: var(--azul);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: var(--azul2);
+}
+
+.link:active {
+    color: var(--azul3);
+}
