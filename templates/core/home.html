@@ -1,16 +1,37 @@
 {% extends 'base.html' %}
 {% block main %}
-{% for postagem in postagens %}
-<div class="mb-3 p-3 postagem">
-    <div class="mb-3">
-        <h1 class="fs-2 {% if postagem.categoria %}mb-2{% else %}mb-0{% endif %}">{{ postagem.titulo }}</h1>
-        {% if postagem.categoria %}
-        <a class="link" href="">{{ postagem.categoria }}</a>
-        {% endif %}
+<div>
+    {% for postagem in postagens %}
+    <div class="mb-3 p-3 postagem">
+        <div class="mb-3">
+            <h1 class="fs-2">{{ postagem.titulo }}</h1>
+            {% if postagem.categoria %}
+            <a class="link" href="">{{ postagem.categoria }}</a>
+            {% endif %}
+        </div>
+        <div>
+            <p class="mb-0">{{ postagem.desc | linebreaksbr | truncatechars:500 }}</p>
+        </div>
     </div>
-    <div>
-        <p class="mb-0">{{ postagem.desc | linebreaksbr | truncatechars:500 }}</p>
-    </div>
+    {% endfor %}
 </div>
-{% endfor %}
+<nav>
+    <ul class="mb-0 pagination">
+        <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
+            <a class="page-link" href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}{% endif %}">
+                <span>&laquo;</span>
+            </a>
+        </li>
+        {% for page_num in page_obj.paginator.page_range %}
+        <li class="page-item {% if page_obj.number == page_num %}active{% endif %}">
+            <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
+        </li>
+        {% endfor %}
+        <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
+            <a class="page-link" href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}">
+                <span>&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
 {% endblock main %}
