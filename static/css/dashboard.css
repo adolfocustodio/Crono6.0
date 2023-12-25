@@ -1,0 +1,11 @@
+.card-container {
+    display: flex;
+    width: 750px;
+}
+
+.card {
+    background-color: var(--azul);
+    border: currentColor;
+    color: var(--branco);
+    width: 100%;
+}

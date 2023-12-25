@@ -14,7 +14,9 @@
 </head>
 <body>
     <header class="p-3">
-        <h1 class="fs-4 mb-0">Crono</h1>
+        <a href="{% url 'core:home' %}">
+            <h1 class="fs-4 mb-0">Crono</h1>
+        </a>
     </header>
     <main class="p-3">
         {% block main %}
