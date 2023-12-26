@@ -1,11 +1,19 @@
 @import url('dashboard.css');
+@import url('buttons.css');
 
 :root {
     --azul: #0a58ca;
     --azul2: #094fba;
     --azul3: #083fba;
+    --azul_claro: rgb(207, 226, 255, 0.5);
+    --cinza: #6c757d;
+    --cinza2: #666f79;
+    --cinza3: #606b75;
     --branco: #fff;
     --branco2: #f8f9fa;
+    --vermelho: #dc3545;
+    --vermelho2: #d2313f;
+    --vermelho3: #c3273d;
 }
 
 header {

@@ -9,3 +9,17 @@
     color: var(--branco);
     width: 100%;
 }
+
+hr {
+    color: var(--azul);
+}
+
+
+tbody tr:hover td {
+    background-color: var(--azul_claro);
+}
+
+
+form {
+    width: 750px;
+}
