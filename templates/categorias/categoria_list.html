@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block main %}
 <div class="w-75">
+    {% if messages %}
+    {% include "messages.html" %}
+    {% endif %}
     <table class="table">
         <thead>
             <tr>
