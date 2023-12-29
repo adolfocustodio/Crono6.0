@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block main %}
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <label class="form-label">Nome</label>
+        {{ form.nome }}
+    </div>
+    <hr>
+    <div class="text-end">
+        <button class="btn_azul" type="submit">Enviar</button>
+    </div>
+</form>
+{% endblock main %}
